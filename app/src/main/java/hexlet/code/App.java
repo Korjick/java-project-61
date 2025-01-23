@@ -16,8 +16,10 @@ public class App {
         if (gameType == GameType.Exit) {
             return;
         }
-        String userName = Cli.welcomeUser(in);
+
+        String userName = "";
         switch (gameType) {
+            case Greet -> userName = Cli.welcomeUser(in);
             case Even -> EvenGameStrategy.execute(in, userName);
             case Calc -> CalcGameStrategy.execute(in, userName);
             case GCD -> GcdGameStrategy.execute(in, userName);

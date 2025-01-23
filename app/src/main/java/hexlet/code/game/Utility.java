@@ -22,7 +22,6 @@ public class Utility {
 
     public static void game(Scanner in, int playCount, String playerName,
                             Supplier<Map.Entry<String, String>> taskAndCorrectAnsFun) {
-
         for (int i = 0; i < playCount; i++) {
             Map.Entry<String, String> taskAndAnswer = taskAndCorrectAnsFun.get();
             String task = taskAndAnswer.getKey();
