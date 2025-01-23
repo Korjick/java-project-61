@@ -1,5 +1,7 @@
 package hexlet.code.game;
 
+import hexlet.code.Cli;
+
 import java.util.Map;
 import java.util.Random;
 import java.util.Scanner;
@@ -29,7 +31,8 @@ public class PrimeGameStrategy {
         return Map.entry(task, correctAnswer);
     }
 
-    public static void execute(Scanner in, String userName) {
+    public static void execute(Scanner in) {
+        String userName = Cli.welcomeUser(in);
         Utility.game(in, 3, userName, PrimeGameStrategy::getTaskAndAnswer);
     }
 }

@@ -1,5 +1,7 @@
 package hexlet.code.game;
 
+import hexlet.code.Cli;
+
 import java.util.List;
 import java.util.Map;
 import java.util.Random;
@@ -32,7 +34,8 @@ public class ProgressionGameStrategy {
         return Map.entry(task, String.valueOf(hiddenValue));
     }
 
-    public static void execute(Scanner in, String userName) {
+    public static void execute(Scanner in) {
+        String userName = Cli.welcomeUser(in);
         Utility.game(in, 3, userName, ProgressionGameStrategy::getTaskAndAnswer);
     }
 }

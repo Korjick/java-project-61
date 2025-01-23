@@ -1,5 +1,7 @@
 package hexlet.code.game;
 
+import hexlet.code.Cli;
+
 import java.util.Map;
 import java.util.Random;
 import java.util.Scanner;
@@ -23,7 +25,8 @@ public class CalcGameStrategy {
         return Map.entry(task, String.valueOf(result));
     }
 
-    public static void execute(Scanner in, String userName) {
+    public static void execute(Scanner in) {
+        String userName = Cli.welcomeUser(in);
         Utility.game(in, 3, userName, CalcGameStrategy::getTaskAndAnswer);
     }
 }
