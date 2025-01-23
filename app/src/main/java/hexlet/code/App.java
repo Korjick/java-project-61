@@ -12,15 +12,12 @@ import java.util.Scanner;
 public class App {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
-        GameType gameType = Cli.askGameType(in);
+        GameType gameType = (args.length > 0) ? GameType.values()[Integer.parseInt(args[0])] : Cli.askGameType(in);
         if (gameType == GameType.Exit) {
             return;
         }
-        String userName = "";
+        String userName = (args.length > 1) ? args[1] : Cli.welcomeUser(in);
         switch (gameType) {
-            case Greet:
-                userName = Cli.welcomeUser(in);
-                break;
             case Even:
                 EvenGameStrategy.execute(in, userName);
                 break;
