@@ -17,13 +17,13 @@ public class Cli {
         }
         System.out.println(gameTypeValues[0].ordinal() + " - " + gameTypeValues[0].name());
         System.out.print("Your choice: ");
-        return gameTypeValues[in.nextInt()];
+        return gameTypeValues[Integer.parseInt(in.nextLine())];
     }
 
     public static String welcomeUser(Scanner in) {
         System.out.println("Welcome to the Brain Games!");
         System.out.print("May I have your name? ");
-        String userName = in.next();
+        String userName = in.nextLine();
         System.out.printf("Hello, %s!\n", userName);
         return userName;
     }
