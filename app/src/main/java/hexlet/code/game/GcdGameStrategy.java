@@ -18,8 +18,8 @@ public class GcdGameStrategy {
 
     private static Map.Entry<String, String> getTaskAndAnswer() {
         Random random = new Random();
-        int num1 = random.nextInt(100) + 1; // Случайное число от 1 до 100
-        int num2 = random.nextInt(100) + 1;
+        int num1 = random.nextInt(Utility.RANDOM_LIMIT) + 1; // Случайное число от 1 до 100
+        int num2 = random.nextInt(Utility.RANDOM_LIMIT) + 1;
 
         String task = "Find the greatest common divisor of given numbers.\n"
                 + "Question: " + num1 + " " + num2;
@@ -29,6 +29,6 @@ public class GcdGameStrategy {
 
     public static void execute(Scanner in) {
         String userName = Cli.welcomeUser(in);
-        Utility.game(in, 3, userName, GcdGameStrategy::getTaskAndAnswer);
+        Utility.game(in, Utility.LOOP_COUNT, userName, GcdGameStrategy::getTaskAndAnswer);
     }
 }

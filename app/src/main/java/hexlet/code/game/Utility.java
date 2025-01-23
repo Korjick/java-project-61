@@ -5,6 +5,10 @@ import java.util.Scanner;
 import java.util.function.Supplier;
 
 public class Utility {
+
+    static final int RANDOM_LIMIT = 100;
+    static final int LOOP_COUNT = 3;
+
     private static boolean askAndAnswer(Scanner in, String playerName, String task, String correctAns) {
         System.out.println(task);
         System.out.print("Your answer: ");

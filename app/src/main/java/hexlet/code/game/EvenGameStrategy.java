@@ -9,7 +9,7 @@ import java.util.Scanner;
 public class EvenGameStrategy {
     private static Map.Entry<String, String> getTaskAndAnswer() {
         Random random = new Random();
-        int num = random.nextInt(100) + 1; // Случайное число от 1 до 100
+        int num = random.nextInt(Utility.RANDOM_LIMIT) + 1; // Случайное число от 1 до 100
         boolean isEven = num % 2 == 0;
         String task = "Answer 'yes' if the number is even, otherwise answer 'no'.\n"
                 + "Question: " + num;
@@ -19,6 +19,6 @@ public class EvenGameStrategy {
 
     public static void execute(Scanner in) {
         String userName = Cli.welcomeUser(in);
-        Utility.game(in, 3, userName, EvenGameStrategy::getTaskAndAnswer);
+        Utility.game(in, Utility.LOOP_COUNT, userName, EvenGameStrategy::getTaskAndAnswer);
     }
 }

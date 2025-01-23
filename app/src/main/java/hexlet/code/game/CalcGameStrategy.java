@@ -7,11 +7,14 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class CalcGameStrategy {
+
+
     private static Map.Entry<String, String> getTaskAndAnswer() {
         Random random = new Random();
-        int num1 = random.nextInt(100) + 1; // Случайное число от 1 до 100
-        int num2 = random.nextInt(100) + 1;
-        char op = "+-*".charAt(random.nextInt(3)); // Выбор случайного оператора
+        int num1 = random.nextInt(Utility.RANDOM_LIMIT) + 1; // Случайное число от 1 до 100
+        int num2 = random.nextInt(Utility.RANDOM_LIMIT) + 1;
+        String chars = "+-*";
+        char op = chars.charAt(random.nextInt(chars.length())); // Выбор случайного оператора
 
         int result = switch (op) {
             case '+' -> num1 + num2;
@@ -27,6 +30,6 @@ public class CalcGameStrategy {
 
     public static void execute(Scanner in) {
         String userName = Cli.welcomeUser(in);
-        Utility.game(in, 3, userName, CalcGameStrategy::getTaskAndAnswer);
+        Utility.game(in, Utility.LOOP_COUNT, userName, CalcGameStrategy::getTaskAndAnswer);
     }
 }

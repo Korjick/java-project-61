@@ -21,7 +21,7 @@ public class PrimeGameStrategy {
 
     private static Map.Entry<String, String> getTaskAndAnswer() {
         Random random = new Random();
-        int num = random.nextInt(100) + 1; // Случайное число от 1 до 100
+        int num = random.nextInt(Utility.RANDOM_LIMIT) + 1; // Случайное число от 1 до 100
         boolean isPrime = isPrime(num);
 
         String task = "Answer 'yes' if given number is prime. Otherwise answer 'no'.\n"
@@ -33,6 +33,6 @@ public class PrimeGameStrategy {
 
     public static void execute(Scanner in) {
         String userName = Cli.welcomeUser(in);
-        Utility.game(in, 3, userName, PrimeGameStrategy::getTaskAndAnswer);
+        Utility.game(in, Utility.LOOP_COUNT, userName, PrimeGameStrategy::getTaskAndAnswer);
     }
 }
