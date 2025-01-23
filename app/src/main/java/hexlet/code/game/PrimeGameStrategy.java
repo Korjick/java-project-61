@@ -24,7 +24,7 @@ public class PrimeGameStrategy {
         int num = random.nextInt(100) + 1; // Случайное число от 1 до 100
         boolean isPrime = isPrime(num);
 
-        String task = "Answer \"yes\" if given number is prime. Otherwise answer \"no\".\n"
+        String task = "Answer 'yes' if given number is prime. Otherwise answer 'no'.\n"
                 + "Question: " + num;
         String correctAnswer = isPrime ? "yes" : "no";
 

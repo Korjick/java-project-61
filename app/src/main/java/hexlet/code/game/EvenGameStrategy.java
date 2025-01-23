@@ -11,7 +11,7 @@ public class EvenGameStrategy {
         Random random = new Random();
         int num = random.nextInt(100) + 1; // Случайное число от 1 до 100
         boolean isEven = num % 2 == 0;
-        String task = "Answer \"yes\" if the number is even, otherwise answer \"no\".\n"
+        String task = "Answer 'yes' if the number is even, otherwise answer 'no'.\n"
                 + "Question: " + num;
         String correctAnswer = isEven ? "yes" : "no";
         return Map.entry(task, correctAnswer);
