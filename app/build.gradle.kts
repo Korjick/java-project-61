@@ -1,6 +1,7 @@
 plugins {
     id("java")
     id("application")
+    id("checkstyle")
     id("com.github.ben-manes.versions") version "0.51.0"
 }
 
@@ -21,5 +22,9 @@ tasks.test {
 }
 
 application {
-    mainClass = "App"
+    mainClass = "hexlet.code.App"
+}
+
+tasks.getByName("run", JavaExec::class) {
+    standardInput = System.`in`
 }
